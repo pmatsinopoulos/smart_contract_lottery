@@ -1,6 +1,24 @@
 [profile.default]
+remappings = [
+  "@chainlink/=lib/chainlink/",
+  "@forge-std/=lib/forge-std/src/",
+  "@solmate/=lib/solmate/src/",
+  "@foundry-devops/=lib/foundry-devops/",
+]
 src = "src"
+test = "test"
+script = "scripts"
 out = "out"
 libs = ["lib"]
+optimizer = true
+optimizer_runs = 20_000
+fs_permissions = [
+  { access = "read", path = "./broadcast" },
+  { access = "read", path = "./reports" },
+]
+
+[fuzz]
+runs = 256
+max_shrink_iters = 1000
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
