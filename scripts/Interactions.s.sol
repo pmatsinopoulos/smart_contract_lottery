@@ -65,7 +65,7 @@ contract FundSubscription is Script {
             vm.stopBroadcast();
         } else {
             vm.startBroadcast(account);
-            LinkToken(linkToken).transferAndCall(vrfCoordinator, FUND_AMOUNT, abi.encode(subscriptionId));
+            LinkToken(linkToken).transferAndCall(vrfCoordinator, 10 ether, abi.encode(subscriptionId));
             vm.stopBroadcast();
         }
     }

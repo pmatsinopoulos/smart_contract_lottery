@@ -52,7 +52,7 @@ contract DeployRaffle is Script {
         return (raffle, helperConfig);
     }
 
-    function run(uint256 subscriptionId) external returns (Raffle, HelperConfig) {
+    function run() external returns (Raffle, HelperConfig) {
         return deployContract();
     }
 }
